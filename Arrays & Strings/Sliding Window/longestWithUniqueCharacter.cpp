@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution
+class Solution // (https://leetcode.com/problems/longest-substring-without-repeating-characters/)
 {
 public:
     int lengthOfLongestSubstring(string s) // Time O(N), Space O(N)
