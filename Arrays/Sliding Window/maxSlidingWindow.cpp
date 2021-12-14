@@ -4,7 +4,7 @@ using namespace std;
 class Solution // (https://leetcode.com/problems/sliding-window-maximum/)
 {
 public:
-    vector<int> maxSlidingWindow(int arr[], int n, int k) // Time O(N), Space O(N)
+    vector<int> maxSlidingWindow(int arr[], int n, int k) // Time O(N), Space O(K)
     {
         vector<int> ans;
         multiset<int, greater<int>> mst;
