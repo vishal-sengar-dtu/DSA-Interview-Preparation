@@ -1,10 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Kadane
+class MaxSumSubarray
 {
 public:
-    int maxSumSubarray(int arr[], int n)
+    int kadane(int arr[], int n) // Time O(N), Space O(1)
     {
         int maxSum = 0, sum = 0;
 
@@ -14,14 +14,10 @@ public:
 
             if (maxSum < sum)
                 maxSum = sum;
-                
+
             if (sum < 0)
                 sum = 0;
         }
         return maxSum;
-    };
-
-    int maxProductSubarray(int arr[], int n)
-    {
     }
 };
