@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class MaxSumSubarray
+class MaxSumSubarray // (https://leetcode.com/problems/maximum-subarray/)
 {
 public:
     int kadane(int arr[], int n) // Time O(N), Space O(1)

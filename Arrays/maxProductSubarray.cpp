@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class MaxProductSubarray
+class MaxProductSubarray // (https://leetcode.com/problems/maximum-product-subarray/)
 {
 public:
     long long max(long long a, long long b)

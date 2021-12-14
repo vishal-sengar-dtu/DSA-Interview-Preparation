@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution
+class Solution // (https://leetcode.com/problems/two-sum/)
 {
 public:
     vector<int> twoSum(vector<int> &nums, int target) // Time O(N * N), Space O(1)
