@@ -1,10 +1,10 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution // (https://leetcode.com/problems/subarray-sum-equals-k/)
+class Solution // (https://leetcode.com/problems/binary-subarrays-with-sum/)
 {
 public:
-    int prefixSum(int arr[], int n, int k) // Time O(N), Space O(N)
+    int prefixSum(int arr[], int n, int goal) // Time O(N), Space O(N)
     {
         unordered_map<int, int> mp; // For recording prefix sum
         int count = 0, sum = 0;
@@ -13,14 +13,13 @@ public:
         for (int i = 0; i < n; i++)
         {
             sum += arr[i];
-            count += mp[sum - k];
+            count += mp[sum - goal];
             mp[sum]++;
         }
         return count;
     }
 
-    int slidingWindow(int arr[], int n, int k) // Time O(N), Space O(1)
+    int slidingWindow(int arr[], int n, int goal) // Time O(N), Space O(1)
     {
-        
     }
 };
