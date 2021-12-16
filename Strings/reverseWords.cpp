@@ -61,6 +61,23 @@ public:
 
     string reverseWords(string str) // Time O(N), Space O(1)
     {
-        
+        // remove excess spaces
+        while (str[0] == ' ')
+            str.erase(str.begin());
+
+        while (str[str.length() - 1] == ' ')
+            str.erase(str.begin() + str.length() - 1);
+
+        int idx = 0;
+        while(idx < str.length()){
+            if(str[idx] == ' ' && str[idx+1] == ' ')
+                str.erase(str.begin() + idx);
+            else
+                idx++;
+        }
+
+        reverse(str.begin(), str.end());
+
+        return reverseWordsII(str);
     }
 };
