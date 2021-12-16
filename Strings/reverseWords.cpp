@@ -3,6 +3,25 @@ using namespace std;
 
 class Solution
 {
+    string reverseWordsII(string str) // Time O(N), Space O(1)
+    {
+        int first = 0, last = 0;
+
+        while (last < str.length())
+        {
+            if (str[last] == ' ')
+            {
+                reverse(str.begin() + first, str.begin() + last);
+                first = last + 1;
+            }
+            if (last == str.length() - 1)
+                reverse(str.begin() + first, str.end());
+
+            last++;
+        }
+        return str;
+    }
+
 public:
     // input: str = " the sky   is blue  "
     // output: "blue is the sky"
@@ -42,5 +61,6 @@ public:
 
     string reverseWords(string str) // Time O(N), Space O(1)
     {
+        
     }
 };
