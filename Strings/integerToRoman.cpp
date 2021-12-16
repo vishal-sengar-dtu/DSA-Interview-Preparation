@@ -7,7 +7,7 @@ class Solution
     vector<string> roman = {"M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"};
 
 public:
-    string intToRoman(int num)
+    string intToRoman(int num) 
     {
         string ans = "";
 
