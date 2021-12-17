@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution
+class Solution // (https://leetcode.com/problems/reverse-only-letters/)
 {
 public:
     // input: str = "Test1ng-Leet=code-Q!"
@@ -13,7 +13,8 @@ public:
 
         while (first < last)
         {
-            if(isalpha(str[first]) && isalpha(str[last])){
+            if (isalpha(str[first]) && isalpha(str[last]))
+            {
                 char tmp = str[last];
                 str[last--] = str[first];
                 str[first++] = tmp;
@@ -21,7 +22,7 @@ public:
             if (!isalpha(str[first]))
                 first++;
             if (!isalpha(str[last]))
-                last--;       
+                last--;
         }
         return str;
     }

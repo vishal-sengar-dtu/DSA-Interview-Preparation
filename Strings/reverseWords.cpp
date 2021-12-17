@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution
+class Solution // (https://leetcode.com/problems/reverse-words-in-a-string/)
 {
     string reverseWordsII(string str) // Time O(N), Space O(1)
     {
@@ -69,8 +69,9 @@ public:
             str.erase(str.begin() + str.length() - 1);
 
         int idx = 0;
-        while(idx < str.length()){
-            if(str[idx] == ' ' && str[idx+1] == ' ')
+        while (idx < str.length())
+        {
+            if (str[idx] == ' ' && str[idx + 1] == ' ')
                 str.erase(str.begin() + idx);
             else
                 idx++;

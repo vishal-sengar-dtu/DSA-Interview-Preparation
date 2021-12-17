@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution
+class Solution // (https://leetcode.com/problems/reverse-words-in-a-string-iii/)
 {
 public:
     // input: str = "the sky is blue"
