@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Fibonacci // (https://leetcode.com/problems/climbing-stairs/)
+class Solution // (https://leetcode.com/problems/climbing-stairs/)
 {
 public:
     int climbStairs(int n) // Time O(N), Space O(1)
