@@ -27,7 +27,7 @@ public:
         return dp[N][Sum];
     }
 
-    bool spaceOptimizedDP(int coins[], int Sum, int N) // Time O(N*Sum) Space O(Sum)
+    int spaceOptimizedDP(int coins[], int Sum, int N) // Time O(N*Sum) Space O(Sum)
     {
         vector<long> dp(Sum + 1, 0);
         dp[0] = 1;
@@ -37,7 +37,7 @@ public:
             for (int j = 1; j <= Sum; j++)
             {
                 if (j >= coins[i])
-                    dp[j] = (dp[j] || dp[j - coins[i]]);
+                    dp[j] = (dp[j] + dp[j - coins[i]]);
             }
         }
 
