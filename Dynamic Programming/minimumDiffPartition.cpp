@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution
+class Solution // (https://leetcode.com/problems/last-stone-weight-ii/)
 {
 public:
     int minimumDiffPartition(int arr[], int N) // Time O(N * Sum/2), Space O(N * Sum/2)

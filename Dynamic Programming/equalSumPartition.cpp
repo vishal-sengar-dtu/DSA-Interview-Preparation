@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution
+class Solution // (https://leetcode.com/problems/partition-equal-subset-sum/)
 {
 public:
     bool equalSumPartition(int arr[], int N) // Time O(N*Sum) Space O(N*Sum)

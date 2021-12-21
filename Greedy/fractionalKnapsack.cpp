@@ -8,7 +8,7 @@ public:
     int value;
 };
 
-class Solution
+class Solution // (https://practice.geeksforgeeks.org/problems/fractional-knapsack-1587115620/1)
 {
 public:
     static bool compare(Item a, Item b)

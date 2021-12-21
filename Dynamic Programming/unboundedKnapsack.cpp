@@ -8,7 +8,7 @@ public:
     int weight;
 };
 
-class UnboundedKnapsack
+class UnboundedKnapsack // (https://practice.geeksforgeeks.org/problems/knapsack-with-duplicate-items4201/1)
 {
 public:
     int Recursion(Item arr[], int W, int N) // Time O(2^n) Space O(1)

@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution
+class Solution // (https://practice.geeksforgeeks.org/problems/subset-sum-problem-1611555638/1/)
 {
 public:
     bool subsetSum(int arr[], int Sum, int N) // Time O(N*Sum) Space O(N*Sum)

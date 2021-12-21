@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class RodCutting
+class RodCutting // (https://practice.geeksforgeeks.org/problems/rod-cutting0840/1)
 {
 public:
     int BottomUp(int price[], int N)
@@ -35,7 +35,7 @@ public:
             {
                 if (j >= i)
                 {
-                    dp[j] = max(dp[j], dp[j - (i)] + price[i-1]);
+                    dp[j] = max(dp[j], dp[j - (i)] + price[i - 1]);
                 }
             }
         }
