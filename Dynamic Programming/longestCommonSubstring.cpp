@@ -22,6 +22,7 @@ public:
         {
             for (int j = 1; j <= m; j++)
             {
+                // If consicutive characters are equal then we keep increasing the length and update the mxLen.
                 if (s1[i - 1] == s2[j - 1])
                 {
                     dp[i][j] = 1 + dp[i - 1][j - 1];
