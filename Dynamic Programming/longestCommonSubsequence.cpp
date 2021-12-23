@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution // (https://leetcode.com/problems/longest-common-subsequence/)
+class LCS // (https://leetcode.com/problems/longest-common-subsequence/)
 {
     int helper(string s1, string s2, int n, int m)
     {

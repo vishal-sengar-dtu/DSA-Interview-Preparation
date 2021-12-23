@@ -4,7 +4,7 @@ using namespace std;
 class Solution // (return the LCS string)
 {
 public:
-    string LCS(string s1, string s2) // Time O(N * M), Space (N * M)
+    string printLCS(string s1, string s2) // Time O(N * M), Space (N * M)
     {
         int n = s1.length();
         int m = s2.length();
