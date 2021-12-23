@@ -12,11 +12,11 @@ public:
 
         // store reversed string
         for (int i = 0; i < n; i++)
-            rev[i] = s[n - i -1];
+            rev[i] = s[n - i - 1];
 
-        int lcsLen = lcs(s, rev); // longest common subsequence (LCS)
+        int lpsLen = lcs(s, rev); // longest common subsequence (LCS)
 
         // longest palindromic subsequence is the LCS of the string and its reverse.
-        return lcsLen;
+        return lpsLen;
     }
 };

@@ -54,7 +54,7 @@ public:
         int n = s1.length();
         int m = s2.length();
 
-        vector<int> dp(m, 0);
+        vector<int> dp(m + 1, 0);
         int prev_val, curr_val;
 
         for (int i = 1; i <= n; i++)
