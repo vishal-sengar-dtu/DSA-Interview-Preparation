@@ -8,7 +8,7 @@ public:
     TreeNode *left, *right;
 };
 
-class Solution // (https://leetcode.com/problems/maximum-depth-of-binary-tree/)
+class Height // (https://leetcode.com/problems/maximum-depth-of-binary-tree/)
 {
 public:
     // height = -1 ; for empty tree.
