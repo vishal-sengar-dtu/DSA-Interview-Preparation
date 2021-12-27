@@ -30,10 +30,10 @@ public:
 
         vector<vector<int>> ans;
 
-        for (auto p : mp)
+        for (auto &p : mp)
         {
             vector<int> curr_lvl;
-            for (auto q : p.second)
+            for (auto &q : p.second)
             {
                 for (int i : q.second)
                 {
