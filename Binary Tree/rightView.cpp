@@ -10,7 +10,26 @@ public:
 
 class Solution // (https://leetcode.com/problems/binary-tree-right-side-view/)
 {
+    void traverse(TreeNode *root, int lvl, vector<int> &ans)
+    {
+        if (root == NULL)
+            return;
+
+        if(ans.size() == lvl)
+            ans.push_back(root->val);
+
+        traverse(root->right, lvl + 1, ans);
+        traverse(root->left, lvl + 1, ans);
+    }
+
 public:
+    vector<int> rightView(TreeNode *root) // Recursive Method
+    {
+        vector<int> ans;
+        traverse(root, 0, ans);
+        return ans;
+    }
+
     vector<int> rightSideView(TreeNode *root) // Iterative Method
     {
         queue<TreeNode *> Q;
