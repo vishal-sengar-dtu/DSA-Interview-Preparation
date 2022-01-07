@@ -22,7 +22,7 @@ class Solution // (https://practice.geeksforgeeks.org/problems/bottom-view-of-bi
     }
 
 public:
-    vector<int> topView(TreeNode *root) // Recursive Method
+    vector<int> bottomView(TreeNode *root) // Recursive Method
     {
         // mp = < x-coordinate, < root->val, . . . >  >
         map<int, vector<int>> mp;
