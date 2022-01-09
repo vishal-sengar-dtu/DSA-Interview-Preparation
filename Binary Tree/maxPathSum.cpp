@@ -21,7 +21,7 @@ public:
             int l = max(0, helper(root->left));
             int r = max(0, helper(root->right));
 
-            // updating the max path sum with split within the subtree.
+            // updating the max path sum with split in the subtree.
             int pathSum = l + root->val + r;
             ans = max(ans, pathSum);
 
