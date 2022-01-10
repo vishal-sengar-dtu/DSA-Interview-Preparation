@@ -15,20 +15,17 @@ public:
     {
         if (root)
         {
-            flatten(root->left);
+            // Move the left subtree between root and the right subtree.
+            TreeNode *tmp = root->right;
+            root->right = root->left;
+            root->left = NULL;
 
-            // Inorder - inserting left subtree between root and right subtree.
-            if (root->left)
-            {
-                TreeNode *tmp = root->right;
-                root->right = root->left;
-                root->left = NULL;
-                
-                while (root->right)
-                    root = root->right;
-                
-                root->right = tmp;
-            }
+            TreeNode *node = root;
+            while (node->right)
+                node = node->right;
+
+            // Append the right subtree here
+            node->right = tmp;
 
             flatten(root->right);
         }
