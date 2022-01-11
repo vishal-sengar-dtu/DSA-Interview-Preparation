@@ -1,7 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution // (https://practice.geeksforgeeks.org/problems/consecutive-1s-not-allowed1912/1#)
+/*
+    Company Tags : {Flipkart, Microsoft, Morgan Stanley}
+    Question Link : {https://practice.geeksforgeeks.org/problems/consecutive-1s-not-allowed1912/1#}
+*/
+
+class Solution
 {
 private:
     int noConsecutiveOne(int n) // Time O(N), Space O(N)

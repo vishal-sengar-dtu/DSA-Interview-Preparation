@@ -1,7 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class EditDistance // (https://leetcode.com/problems/edit-distance/)
+/*
+    Company Tags : {Amazon, Goldman Sachs, Microsoft, Google}
+    Question Link : {https://leetcode.com/problems/edit-distance/}
+*/
+
+class EditDistance
 {
     int helper(string s1, string s2, int n, int m) // Exponential Time Complexity TLE
     {

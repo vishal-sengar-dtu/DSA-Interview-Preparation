@@ -1,7 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution // (https://leetcode.com/problems/house-robber/)
+/*
+    Company Tags : { Amazon, Walmart, Adobe, Flipkart, OYO Rooms, Paytm}
+    Question Link : {https://leetcode.com/problems/house-robber/}
+*/
+
+class Solution
 {
 public:
     int helper(vector<int> &nums, int n)

@@ -1,7 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution // (https://leetcode.com/problems/partition-equal-subset-sum/)
+/*
+    Company Tags : {Accolite, Adobe, Amazon, OYO Rooms, Microsoft}
+    Question Link : {https://leetcode.com/problems/partition-equal-subset-sum/}
+*/
+
+class Solution
 {
 public:
     bool equalSumPartition(int arr[], int N) // Time O(N*Sum) Space O(N*Sum)

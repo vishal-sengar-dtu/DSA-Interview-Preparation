@@ -1,7 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution // (https://leetcode.com/problems/dungeon-game/)
+/*
+    Company Tags : {Microsoft, Winzo}
+    Question Link : {https://leetcode.com/problems/dungeon-game/}
+*/
+
+class Solution 
 {
 public:
     int calculateMinimumHP(vector<vector<int>> &dungeon) // Time O(N * M), Space O(N * M)

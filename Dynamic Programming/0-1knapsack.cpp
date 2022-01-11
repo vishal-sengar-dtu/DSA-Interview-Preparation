@@ -1,6 +1,11 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/*
+    Company Tags : {Amazon, Directi, Flipkart, Microsoft, Morgan Stanley, Oracle, Payu, Visa}
+    Question Link : {https://practice.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1}
+*/
+
 class Item
 {
 public:
@@ -8,7 +13,7 @@ public:
     int weight;
 };
 
-class ZeroOneKnapsack // (https://practice.geeksforgeeks.org/problems/0-1-knapsack-problem0945/1)
+class ZeroOneKnapsack
 {
 public:
     int Recursion(Item arr[], int W, int N) // Time O(2^n) Space O(1)
