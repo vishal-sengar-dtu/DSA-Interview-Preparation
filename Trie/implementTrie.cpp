@@ -1,11 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-/*
-    Company Tags : {Accolite, Amazon, D-E-Shaw, Microsoft}
-    Question Link : {https://leetcode.com/problems/implement-trie-prefix-tree/}
-*/
-
 class TrieNode
 {
 public:
@@ -25,12 +20,14 @@ class Trie
     TrieNode *root;
 
 public:
+    /* Initializing the Data Structure */
     Trie()
     {
         root = new TrieNode();
     }
 
-    void insert(string word) // Time O(len)
+    /* Inserts a word into the Trie */
+    void insert(string word)
     {
         int len = word.length();
         TrieNode *tmp = root;
@@ -46,7 +43,8 @@ public:
         tmp->isLeaf = true;
     }
 
-    bool search(string word) // Time O(len)
+    /* Returns true if the word is in the Trie */
+    bool search(string word)
     {
         int len = word.length();
         TrieNode *tmp = root;
@@ -62,6 +60,7 @@ public:
         return tmp->isLeaf;
     }
 
+    /* Returns true if the word with given prefix exists in the Trie*/
     bool startsWith(string prefix)
     {
         int len = prefix.length();
