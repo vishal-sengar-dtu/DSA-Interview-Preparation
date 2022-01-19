@@ -3,20 +3,47 @@ using namespace std;
 
 class TrieNode
 {
-public:
-    TrieNode *children[26];
-    bool isLeaf;
+private:
+    TrieNode *links[26];
+    bool flag;
 
+public:
     TrieNode()
     {
         for (int i = 0; i < 26; i++)
-            this->children[i] = NULL;
-        this->isLeaf = false;
+            this->links[i] = NULL;
+        this->flag = false;
+    }
+
+    bool containsKey(char ch)
+    {
+        return links[ch - 'a'] != NULL;
+    }
+
+    TrieNode *get(char ch)
+    {
+        return links[ch - 'a'];
+    }
+
+    void put(char ch, TrieNode *node)
+    {
+        links[ch - 'a'] = node;
+    }
+
+    bool setFlag(bool ans)
+    {
+        flag = ans;
+    }
+
+    bool getFlag()
+    {
+        return flag;
     }
 };
 
 class Trie
 {
+private:
     TrieNode *root;
 
 public:
@@ -27,52 +54,40 @@ public:
     }
 
     /* Inserts a word into the Trie */
-    void insert(string word)
+    void insert(string &word)
     {
-        int len = word.length();
-        TrieNode *tmp = root;
-
-        for (int i = 0; i < len; i++)
+        TrieNode *node = root;
+        for (int i = 0; i < word.length(); i++)
         {
-            char c = word[i] - 'a';
-
-            if (tmp->children[c] == NULL)
-                tmp->children[c] = new TrieNode();
-            tmp = tmp->children[c];
+            if (!node->containsKey(word[i]))
+                node->put(word[i], new TrieNode());
+            node = node->get(word[i]);
         }
-        tmp->isLeaf = true;
+        node->setFlag(true);
     }
 
     /* Returns true if the word is in the Trie */
-    bool search(string word)
+    bool search(string &word)
     {
-        int len = word.length();
-        TrieNode *tmp = root;
-
-        for (int i = 0; i < len; i++)
+        TrieNode *node = root;
+        for (int i = 0; i < word.length(); i++)
         {
-            char c = word[i] - 'a';
-
-            if (tmp->children[c] == NULL)
+            if (!node->containsKey(word[i]))
                 return false;
-            tmp = tmp->children[c];
+            node = node->get(word[i]);
         }
-        return tmp->isLeaf;
+        return node->getFlag();
     }
 
     /* Returns true if the word with given prefix exists in the Trie*/
-    bool startsWith(string prefix)
+    bool checkIfPrefixExists(string &prefix)
     {
-        int len = prefix.length();
-        TrieNode *tmp = root;
-
-        for (int i = 0; i < len; i++)
+        TrieNode *node = root;
+        for (int i = 0; i < prefix.length(); i++)
         {
-            char c = prefix[i] - 'a';
-
-            if (tmp->children[c] == NULL)
+            if (!node->containsKey(prefix[i]))
                 return false;
-            tmp = tmp->children[c];
+            node = node->get(prefix[i]);
         }
         return true;
     }
