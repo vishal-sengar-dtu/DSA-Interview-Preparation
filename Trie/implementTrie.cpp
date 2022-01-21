@@ -1,6 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+/*
+    Company Tags : {Accolite, Amazon, D-E-Shaw, Microsoft}
+    Question Link : {https://leetcode.com/problems/implement-trie-prefix-tree/}
+*/
+
+#include <bits/stdc++.h>
+using namespace std;
+
 class TrieNode
 {
 private:
