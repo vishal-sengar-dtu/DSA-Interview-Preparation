@@ -1,7 +1,7 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-class Solution // (https://leetcode.com/problems/valid-anagram/)
+class Anagram // (https://leetcode.com/problems/valid-anagram/)
 {
 public:
     bool isAnagram(string s, string t) // Time O(N), Space O(1);
