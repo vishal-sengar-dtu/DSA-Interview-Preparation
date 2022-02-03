@@ -3,6 +3,14 @@ using namespace std;
 
 class Solution // (https://leetcode.com/problems/two-sum/)
 {
+private:
+    unordered_map<int, int> mp;
+
+    bool search(int n)
+    {
+        return mp.find(n) != mp.end();
+    }
+
 public:
     vector<int> twoSum(vector<int> &nums, int target) // Time O(N * N), Space O(1)
     {
@@ -29,24 +37,18 @@ public:
     vector<int> twoSumOptimized(vector<int> &nums, int target) // Time O(N), Space O(N)
     {
         int n = nums.size();
-        vector<int> result;
-        unordered_map<int, int> mp;
+        vector<int> res{-1, -1};
 
         for (int i = 0; i < n; i++)
         {
-            int temp = target - nums[i];
-
-            if (mp.find(temp) != mp.end())
+            if (search(nums[i]))
             {
-                result.push_back(mp[temp]);
-                result.push_back(i);
+                res[0] = mp[nums[i]];
+                res[1] = i;
                 break;
             }
-            else
-            {
-                mp.insert({nums[i], i});
-            }
+            mp.insert({target - nums[i], i});
         }
-        return result;
+        return res;
     }
 };
