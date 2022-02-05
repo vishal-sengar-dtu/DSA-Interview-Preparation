@@ -9,7 +9,7 @@ using namespace std;
 class Solution
 {
 public:
-    int findMaxLength(vector<int> &nums)
+    int findMaxLength(vector<int> &nums) // Time O(N), Space O(N)
     {
         int ans = 0, sum = 0, len;
         unordered_map<int, int> mp;
