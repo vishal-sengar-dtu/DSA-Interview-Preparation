@@ -10,15 +10,9 @@ class Solution
 {
 private:
     unordered_map<int, vector<int>> bus_from;
-    unordered_set<int> visited;
-
-    bool isVisited(int bus_stop)
-    {
-        return visited.find(bus_stop) != visited.end();
-    }
 
 public:
-    void dfsUtil(int current_bus_stop, int bus_count, int bus_no, int ans, vector<vector<int>> &routes, int target)
+    void dfsUtil(int current_bus_stop, int bus_count, int bus_no, int &ans, vector<vector<int>> &routes, int target, unordered_set<int> &visited)
     {
         if (current_bus_stop == target)
         {
@@ -33,23 +27,26 @@ public:
         {
             for (int bus_stop : routes[buses[i]])
             {
-                if (!isVisited(bus_stop))
+                if (visited.find(bus_stop) == visited.end())
                 {
                     if (bus_no != buses[i])
                     {
                         bus_count++;
                         bus_no = buses[i];
                     }
-                    dfsUtil(bus_stop, bus_count, bus_no, ans, routes, target);
+                    dfsUtil(bus_stop, bus_count, bus_no, ans, routes, target, visited);
                 }
-                visited.erase(bus_stop);
             }
         }
     }
 
     int numBusesToDestination(vector<vector<int>> &routes, int source, int target)
     {
+        if (source == target)
+            return 0;
+
         int ans = INT_MAX;
+        unordered_set<int> visited;
 
         for (int i = 0; i < routes.size(); i++)
             for (int bus_stop : routes[i])
@@ -57,7 +54,7 @@ public:
 
         for (auto &buses : bus_from[source])
         {
-            dfsUtil(source, 1, buses, ans, routes, target);
+            dfsUtil(source, 1, buses, ans, routes, target, visited);
         }
 
         return ans == INT_MAX ? -1 : ans;
