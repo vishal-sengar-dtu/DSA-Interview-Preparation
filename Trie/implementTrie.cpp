@@ -38,7 +38,7 @@ public:
         links[ch - 'a'] = node;
     }
 
-    bool setFlag(bool ans)
+    void setFlag(bool ans)
     {
         flag = ans;
     }
