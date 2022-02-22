@@ -52,3 +52,15 @@ public:
         cache[key] = value;
     }
 };
+
+int main(){
+    LRUCache obj(3);
+    obj.put(1, 1);
+    obj.put(2, 2);
+    obj.put(3, 3);
+    cout << obj.get(2)<<endl;
+    cout << obj.get(4)<<endl;
+    obj.put(4, 4);
+    obj.put(2, 5);
+    cout << obj.get(3)<<endl;
+}
