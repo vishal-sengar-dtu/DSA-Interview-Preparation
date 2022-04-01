@@ -9,7 +9,7 @@ public:
     int maxProfit(vector<int> &prices) // (https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
     {
         int n = prices.size();
-        int minBuyingPrice = INT_MAX, mxProfit = 0, dailyProfit;
+        int minBuyingPrice = INT_MAX, mxProfit = 0, profit;
 
         for (int i = 0; i < n; i++)
         {
@@ -17,8 +17,8 @@ public:
                 minBuyingPrice = prices[i];
             else
             {
-                dailyProfit = prices[i] - minBuyingPrice;
-                mxProfit = max(mxProfit, dailyProfit);
+                profit = prices[i] - minBuyingPrice;
+                mxProfit = max(mxProfit, profit);
             }
         }
         return mxProfit;
