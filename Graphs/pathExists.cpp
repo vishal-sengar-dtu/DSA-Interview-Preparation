@@ -4,7 +4,21 @@ using namespace std;
 class Solution // (https://leetcode.com/problems/find-if-path-exists-in-graph/)
 {
 public:
-    void dfs(vector<vector<int>> &adj, vector<bool> &vis, int src, int dest)
+    bool dfs1(vector<vector<int>> &adj, vector<bool> &vis, int src, int dest)
+    {
+        vis[src] = 1;
+        if (src == dest)
+            return true;
+
+        for (auto it : adj[src])
+        {
+            if (!vis[it] && dfs1(adj, vis, it, dest))
+                return true;
+        }
+        return false;
+    }
+
+    void dfs2(vector<vector<int>> &adj, vector<bool> &vis, int src, int dest)
     {
         vis[src] = true;
         if (src == dest)
@@ -13,7 +27,7 @@ public:
         for (auto it : adj[src])
         {
             if (!vis[it])
-                dfs(adj, vis, it, dest);
+                dfs2(adj, vis, it, dest);
         }
     }
 
@@ -28,11 +42,8 @@ public:
             adjList[edge[1]].push_back(edge[0]);
         }
 
-        dfs(adjList, visited, source, destination);
-
-        if (visited[destination])
-            return true;
-        else
-            return false;
+        return dfs1(adjList, visited, source, destination);
+        dfs2(adjList, visited, source, destination);
+        return visited[destination];
     }
 };
