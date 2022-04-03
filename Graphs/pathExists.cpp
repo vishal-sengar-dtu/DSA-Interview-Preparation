@@ -31,6 +31,26 @@ public:
         }
     }
 
+    bool bfs(vector<vector<int>> &adj, vector<bool> &vis, int src, int dest){
+        queue<int> q;
+        q.push(src);
+        vis[src] = true;
+        while(!q.empty()){
+            int top = q.front();
+            q.pop();
+            if(top == dest)
+                return true;
+            
+            for(auto it : adj[top]){
+                if(!vis[it]){
+                    q.push(it);
+                    vis[it] = true;
+                }
+            }
+        }
+        return false;
+    }
+
     bool validPath(int n, vector<vector<int>> &edges, int source, int destination)
     {
         vector<vector<int>> adjList(n);
@@ -42,8 +62,8 @@ public:
             adjList[edge[1]].push_back(edge[0]);
         }
 
-        return dfs1(adjList, visited, source, destination);
-        dfs2(adjList, visited, source, destination);
-        return visited[destination];
+        // return dfs1(adjList, visited, source, destination);
+        // dfs2(adjList, visited, source, destination); return visited[destination];
+        // return bfs(adjList, visited, source, destination);
     }
 };
